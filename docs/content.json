@@ -1,8 +1,8 @@
 {
   "about": {
   "image": "images/CroppedUmbrellaInBergen.jpeg",
-  "intro": "My professional journey began at Elvebakken (Class of 2022) and quickly moved into the Royal Norwegian Air Force. Serving as an OR1 through OR2 at the Wing Operation Centers in Bardufoss and Ørland, \n Where I developed a disciplined approach to technical problem-solving under pressure. Witch I now try to apply to my BSc in Informatics: Data Technology.",
-  "story": "Beyond the classroom in Bergen, I am deeply committed to the student community.\n As the Finance Manager and Board Member for ECHO Sports Club (ESC), I manage budgets and lead our Padel group.\n Additionally, as a board member for Hyggkom, I oversee social activities that bridge the gap between rigorous study and a healthy social environment in our faculty reading rooms."
+  "intro": "My professional journey began at Elvebakken (Class of 2022) and quickly moved into the Royal Norwegian Air Force. Serving as an OR1 through OR2 at the Wing Operation Centers in Bardufoss and Ørland, where I developed a disciplined approach to technical problem-solving under pressure. Somthing I now try to apply to my BSc in Informatics: Data Technology.\n\n",
+  "story": "Beyond the classroom in Bergen, I am deeply committed to the student community. As the Finance Manager and Board Member for ECHO Sports Club (ESC), I manage budgets and lead our Padel group.\n\n Additionally, as a board member for Hyggkom, I oversee social activities that bridge the gap between rigorous study and a healthy social environment in our faculty reading rooms."
   },
   "socials": {
     "github": "https://github.com/Isakgraarud",
@@ -14,11 +14,11 @@
       "name": "BSc in Informatics: Data Technology",
       "meta": "University of Bergen (UiB) • 2024 – 2027",
       "courses": [
-        {"name":  "PLACEHOLDER", "meta": "2027" },
-        {"name":  "PLACEHOLDER", "meta": "2027" },
-        {"name":  "PLACEHOLDER", "meta": "2027" },
+        {"name":  "", "meta": "2027" },
+        {"name":  "", "meta": "2027" },
+        {"name":  "", "meta": "2027" },
 
-        { "name":  "PLACEHOLDER", "meta": "2026" },
+        { "name":  "", "meta": "2026" },
         { "name": "INF226 – Software Security", "meta": "2026" },
         { "name": "INF214 – Concurrent Programming", "meta": "2026" },
 
@@ -57,6 +57,32 @@
         { "name": "ELE1001/2/3 – Data-, elenergi- og automatiseringssystemer vg1", "meta": "2020" },
         { "name": "YFF4106/4207 – Yrkesfaglig fordypning (vg1 & vg2)", "meta": "2020–2021" }
       ]
+    }
+  ],
+  "career": [
+    {
+      "title": "Visespesialist (OR2)",
+      "company": "Luftforsvaret (Ørland flystasjon)",
+      "period": "April 2024 - August 2024",
+      "description": "Operasjonsromsspesialist med ansvar for håndtering av besøkende flyvninger og daglig drift av flyplassen. Fungerte som befal for vernepliktige med ansvar for rominspeksjon og vaktplanlegging."
+    },
+    {
+      "title": "Vernepliktig (OR1/OR1+)",
+      "company": "Luftforsvaret (Bardufoss flyplass)",
+      "period": "April 2023 - April 2024",
+      "description": "Drift av operasjonsrommet, håndtering av besøkende flyvninger, loggføring og allokering av slots."
+    },
+    {
+      "title": "Barnehagevikar",
+      "company": "Personalhuset Norway",
+      "period": "September 2022 - April 2023",
+      "description": "Deltakelse i lek og aktiviteter, assistanse ved måltider/påkledning, og bidrag til trygghet og gode rutiner."
+    },
+    {
+      "title": "Instruktør Allidrett",
+      "company": "Sagene Idrettsforening",
+      "period": "August 2021 - August 2022",
+      "description": "Hovedansvar for grupper på ca. 30 barn (3-5 år). Forberedelse og ledelse av ulike fysiske aktiviteter."
     }
   ]
 }

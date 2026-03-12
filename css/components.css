@@ -100,15 +100,15 @@
   color: var(--text-secondary);
 }
 
-/* Degree list - expandable education items */
-.degree-list {
+/* education list - expandable education items */
+.career-list {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
 }
 
-.degree-item {
+.career-item {
   background: none;
   border: none;
   border-bottom: 1px solid var(--border-muted);
@@ -116,11 +116,11 @@
   overflow: hidden;
 }
 
-.degree-item:last-child {
+.career-item:last-child {
   border-bottom: none;
 }
 
-.degree-header {
+.career-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,29 +135,29 @@
   transition: background var(--duration-fast) var(--ease-out-expo);
 }
 
-.degree-header:hover {
+.career-header:hover {
   background: rgba(48, 54, 61, 0.3);
 }
 
-.degree-header:focus-visible {
+.career-header:focus-visible {
   outline: 2px solid var(--accent-green);
   outline-offset: 2px;
 }
 
-.degree-name {
+.career-name {
   font-weight: 600;
   color: var(--text-primary);
   flex: 1;
   min-width: 0;
 }
 
-.degree-meta {
+.career-meta {
   font-size: 0.875rem;
   color: var(--text-secondary);
   margin-right: var(--space-md);
 }
 
-.degree-chevron {
+.career-chevron {
   font-size: 1.25rem;
   color: var(--text-muted);
   transform: rotate(0deg);
@@ -165,11 +165,102 @@
   flex-shrink: 0;
 }
 
-.degree-item.is-expanded .degree-chevron {
+.career-item.is-expanded .career-chevron {
   transform: rotate(90deg);
 }
 
-/* Nested course list: hidden by default, shown when degree is expanded */
+.career-panel {
+  display: none;
+  padding: var(--space-sm) var(--space-lg) var(--space-md);
+  border-top: 1px solid var(--border-muted);
+}
+
+.career-item.is-expanded .career-panel {
+  display: block;
+}
+
+.career-description {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 var(--space-md);
+}
+
+.career-item.is-expanded .course-list.course-list--nested {
+  display: flex;
+  flex-direction: column;
+}
+
+/* education list - expandable education items */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.education-item {
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-muted);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.education-item:last-child {
+  border-bottom: none;
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  transition: background var(--duration-fast) var(--ease-out-expo);
+}
+
+.education-header:hover {
+  background: rgba(48, 54, 61, 0.3);
+}
+
+.education-header:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+}
+
+.education-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  min-width: 0;
+}
+
+.education-meta {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-right: var(--space-md);
+}
+
+.education-chevron {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transform: rotate(0deg);
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+  flex-shrink: 0;
+}
+
+.education-item.is-expanded .education-chevron {
+  transform: rotate(90deg);
+}
+
+/* Nested course list: hidden by default, shown when education is expanded */
 .course-list.course-list--nested {
   display: none;
   margin: 0;
@@ -179,7 +270,7 @@
   background: none;
 }
 
-.degree-item.is-expanded .course-list.course-list--nested {
+.education-item.is-expanded .course-list.course-list--nested {
   display: flex;
   flex-direction: column;
 }

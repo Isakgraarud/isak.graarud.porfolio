@@ -27,21 +27,20 @@ async function initDynamicContent() {
     if (photoEl && data.about.image) {
       photoEl.src = data.about.image;
     }
-
-    // 2. Fill in the Education List (expandable degrees with courses)
-    const degreeList = document.getElementById('degree-list');
-    if (degreeList && data.education) {
-      degreeList.innerHTML = '';
-      data.education.forEach((degree, index) => {
+    // 2. Fill in the education List (expandable education with courses)
+    const educationList = document.getElementById('education-list');
+    if (educationList && data.education) {
+      educationList.innerHTML = '';
+      data.education.forEach((education, index) => {
         const li = document.createElement('li');
-        li.className = 'degree-item';
-        const courses = degree.courses || [];
-        const panelId = `courses-degree-${index}`;
-        const chevron = '<span class="degree-chevron" aria-hidden="true">›</span>';
+        li.className = 'education-item';
+        const courses = education.courses || [];
+        const panelId = `courses-education-${index}`;
+        const chevron = '<span class="education-chevron" aria-hidden="true">›</span>';
         li.innerHTML = `
-          <button type="button" class="degree-header" aria-expanded="false" aria-controls="${panelId}">
-            <span class="degree-name">${degree.name}</span>
-            <span class="degree-meta">${degree.meta}</span>
+          <button type="button" class="education-header" aria-expanded="false" aria-controls="${panelId}">
+            <span class="education-name">${education.name}</span>
+            <span class="education-meta">${education.meta}</span>
             ${chevron}
           </button>
           <ul class="course-list course-list--nested" id="${panelId}">
@@ -53,13 +52,52 @@ async function initDynamicContent() {
             `).join('')}
           </ul>
         `;
-        const header = li.querySelector('.degree-header');
+        const header = li.querySelector('.education-header');
         header.addEventListener('click', () => {
           const isExpanded = header.getAttribute('aria-expanded') === 'true';
           header.setAttribute('aria-expanded', !isExpanded);
           li.classList.toggle('is-expanded', !isExpanded);
         });
-        degreeList.appendChild(li);
+        educationList.appendChild(li);
+      });
+    }
+
+    // 3. Fill in the Career List (expandable career with courses)
+    const careerList = document.getElementById('career-list');
+    if (careerList && data.career) {
+      careerList.innerHTML = '';
+      data.career.forEach((career, index) => {
+        const li = document.createElement('li');
+        li.className = 'career-item';
+        const courses = career.courses || [];
+        const panelId = `courses-career-${index}`;
+        const chevron = '<span class="career-chevron" aria-hidden="true">›</span>';
+        const careerMeta = [career.company, career.period].filter(Boolean).join(' • ');
+        li.innerHTML = `
+          <button type="button" class="career-header" aria-expanded="false" aria-controls="${panelId}">
+            <span class="career-name">${career.title || career.name || ''}</span>
+            <span class="career-meta">${careerMeta || career.meta || ''}</span>
+            ${chevron}
+          </button>
+          <div class="career-panel" id="${panelId}">
+            ${career.description ? `<p class="career-description">${career.description}</p>` : ''}
+            ${courses.length ? `<ul class="course-list course-list--nested">
+              ${courses.map((c) => `
+                <li class="course-item">
+                  <span class="course-name">${c.name}</span>
+                  <span class="course-meta">${c.meta}</span>
+                </li>
+              `).join('')}
+            </ul>` : ''}
+          </div>
+        `;
+        const header = li.querySelector('.career-header');
+        header.addEventListener('click', () => {
+          const isExpanded = header.getAttribute('aria-expanded') === 'true';
+          header.setAttribute('aria-expanded', !isExpanded);
+          li.classList.toggle('is-expanded', !isExpanded);
+        });
+        careerList.appendChild(li);
       });
     }
 
@@ -110,7 +148,7 @@ function initTabNavigation() {
 }
 
 /**
- * Hash routing - handle direct links (e.g. site.com/#education)
+ * Hash routing - handle direct links (e.g. site.com/#career)
  */
 function initHashRouting() {
   const hash = window.location.hash.slice(1);
@@ -137,13 +175,13 @@ function initScrollAnimations() {
 
           // Optional: observe children with stagger
           const children = entry.target.querySelectorAll(
-            '.degree-item, .course-item'
+            '.education-item, .career-item, .course-item'
           );
           if (children.length) {
             children.forEach((child, index) => {
               setTimeout(() => {
                 child.classList.add('is-visible');
-              }, index * 80);
+              }, index * 10);
             });
           }
         }
