@@ -24,6 +24,7 @@
     </nav>
   </header>
 
+    <div class="finisher-header" style="width: 100%; height: 100%; position: relative;"></div>
   <main class="main">
     <!-- About Me Section -->
     <section id="about" class="page-section active" data-section="about">
@@ -75,5 +76,45 @@
   </main>
 
   <script src="js/main.js"></script>
+  <script src="js/background.js"></script>
+  <script type="text/javascript">
+    new FinisherHeader({
+      "count": 36,
+      "size": {
+        "min": 2,
+        "max": 8,
+        "pulse": 0.1
+      },
+      "speed": {
+        "x": {
+          "min": 0,
+          "max": 0.4
+        },
+        "y": {
+          "min": 0,
+          "max": 0.6
+        }
+      },
+      "colors": {
+        "background": "#0d1117",
+        "particles": [
+          "#f37979",
+          "#98daf4",
+          "#ddeaec"
+        ]
+      },
+      "blending": "overlay",
+      "opacity": {
+        "center": 1,
+        "edge": 0
+      },
+      "skew": 0,
+      "shapes": [
+        "c",
+        "s",
+        "t"
+      ]
+    });
+  </script>
 </body>
 </html>
