@@ -3,12 +3,10 @@
    Cards, Buttons, Lists, Gallery
    ============================================ */
 
-/* Card - GitHub-style content blocks */
+/* Card */
 .card {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-default);
-  border-radius: 12px;
-  padding: var(--space-xl);
+  /* No background, border - clean centered text only */
+  padding: var(--space-md) 0 var(--space-xl);
 }
 
 /* Buttons */
@@ -73,7 +71,7 @@
 /* Github card */
 .github-card {
   text-align: center;
-  padding: var(--space-3xl);
+  padding: var(--space-2xl) 0;
 }
 
 .github-card p {
@@ -90,10 +88,15 @@
 }
 
 .degree-item {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-muted);
-  border-radius: 8px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-muted);
+  border-radius: 0;
   overflow: hidden;
+}
+
+.degree-item:last-child {
+  border-bottom: none;
 }
 
 .degree-header {
@@ -112,7 +115,7 @@
 }
 
 .degree-header:hover {
-  background: var(--border-muted);
+  background: rgba(48, 54, 61, 0.3);
 }
 
 .degree-header:focus-visible {
@@ -152,7 +155,7 @@
   padding: var(--space-sm) var(--space-lg) var(--space-md);
   gap: var(--space-sm);
   border-top: 1px solid var(--border-muted);
-  background: var(--bg-primary);
+  background: none;
 }
 
 .degree-item.is-expanded .course-list.course-list--nested {
@@ -176,9 +179,14 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--space-md) var(--space-lg);
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-muted);
-  border-radius: 8px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-muted);
+  border-radius: 0;
+}
+
+.course-item:last-child {
+  border-bottom: none;
 }
 
 .course-name {

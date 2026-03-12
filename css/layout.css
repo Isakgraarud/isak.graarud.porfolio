@@ -23,6 +23,23 @@
   padding: var(--space-md) var(--space-xl);
 }
 
+.nav-initials {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 2.0rem;
+  font-weight: 300;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.nav-initials:hover {
+  color: white;
+  opacity: 0.9;
+}
+
 .nav-spacer {
   flex: 1;
   min-width: 0;
@@ -120,7 +137,7 @@
 .section-title {
   font-size: 2rem;
   font-weight: 600;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   color: var(--text-primary);
 }
 
